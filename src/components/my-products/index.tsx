@@ -13,8 +13,8 @@ export default function MyProducts({}) {
 
     if (isLoading || !productData) {
         return (
-            <Space direction={'vertical'}>
-                <Spin delay={10000} tip={'Fetching Products'} size={'large'} spinning />
+            <Space direction={'vertical'} className={'flex jc-center ai-center t-center'}>
+                <Spin tip={'Fetching Products'} size={'large'} spinning />
             </Space>
         )
     }

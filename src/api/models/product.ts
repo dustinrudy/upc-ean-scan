@@ -22,6 +22,7 @@ export interface Offers {
     model: string;
     size: string;
     dimension: string;
+    color: string;
     weight: string;
     category: string;
     currency: string;

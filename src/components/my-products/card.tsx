@@ -1,6 +1,6 @@
 import { Card, Col } from 'antd'
 import { Product } from '../../api/models/product'
-import NoImageFound from '../../assets/no-image-found.png'
+import NoImageFound from '../../assets/no-image-found.jpg'
 import { SyntheticEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 

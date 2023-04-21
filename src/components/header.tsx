@@ -11,7 +11,7 @@ export const CustomHeader = ({text, icon}: CustomerHeaderProps) => {
     return (
         <div className={'inline-flex ai-center fs-x-large'}>
             {icon ? icon : null}
-            <div className={'m-2'}>{text}</div>
+            <div className={'m-3'}>{text}</div>
         </div>
     )
 }

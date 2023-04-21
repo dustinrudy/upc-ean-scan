@@ -1,18 +1,15 @@
 import { useState } from 'react'
-import { Button, Layout, Space, Menu, Breadcrumb } from 'antd'
+import { Layout, Menu } from 'antd'
 import { BarcodeOutlined, BarsOutlined, ScanOutlined } from '@ant-design/icons'
-import { Input } from 'antd';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import UPCScan from './components/scan/scan';
 import MyProducts from './components/my-products';
 import Product from './components/product';
-import useBreadCrumbs from './hooks/use-bread-crumb';
 import CustomBreadCrumb from './components/breadcrumb';
+import { Error404Page } from './components/error-404';
 
 function App() {
   const [collapsed, setCollapsed] = useState(true)
-
-  const { Search } = Input;
   const { Header, Sider, Content } = Layout;
 
 
@@ -26,10 +23,9 @@ function App() {
           </Link>
         </Header>
         <Layout>
-          <Sider width={400} collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
+          <Sider width={250} collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
             <Menu
               mode={'inline'}
-              defaultSelectedKeys={['1']}
               style={{ height: '100%', borderRight: 0, fontSize: '1rem' }}
             >
               <Menu.Item icon={<ScanOutlined />} key={'1'}>
@@ -53,7 +49,7 @@ function App() {
                 <Route path="/" Component={UPCScan} />
                 <Route path="/products" Component={MyProducts} />
                 <Route path='/products/:upc' Component={Product} />
-                <Route path="*" Component={UPCScan} />
+                <Route path="*" Component={Error404Page} />
               </Routes>
             </Content>
           </Layout>
